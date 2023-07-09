@@ -1,0 +1,176 @@
+/**Style général**/
+/**Début header**/
+header{
+  background: linear-gradient(#9d9d9d,#d5d5d5);
+}
+
+.navbar-brand{
+  padding-left: 1em;
+}
+
+.navbar-collapse{
+  display: flex;
+  justify-content: flex-end;
+  font-size: large;
+}
+
+/**Début footer**/
+footer{
+  background: #595959;
+}
+
+.footer-content{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+
+.footer-ul{
+  list-style: none;
+  font-size: large;
+  margin-top: 2em;
+  line-height: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-ul a{
+  color:white;
+  text-decoration: none;
+}
+
+.tableau-footer{
+  display: flex;
+  width: 25em;
+  height: 18em;
+  margin-top: 2em;
+  line-height: 1em;
+}
+
+.copyright{
+  text-align: center;
+  margin-top: 1em;
+}
+
+
+/**Début index**/
+
+/**Début accueil**/
+.photo-accueil{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bandeau{
+  background: #d5d5d5;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accroche{
+  font-size:large;
+}
+
+.button{
+  background-color: #eb2100;
+  color: #d5d5d5;
+  margin-left: 1em;
+  border-radius: 20%;
+  border: none;
+  width: 7em;
+  line-height: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**Début service**/
+.icone{
+  width: 5em;
+  height: 5em;
+  margin-top: 5em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.service{
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/**Début présentation**/
+.titre-presentation{
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-frein{
+  max-width: 25em;
+  max-height: 25em;
+}
+
+.photo-carrosserie{
+  max-width: 25em;
+  max-height: 25em;
+}
+
+.presentation{
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.presentation-texte{
+  margin-top: 5em;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+/**Début avis**/
+.titre-avis{
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.container-carousel{
+  margin-top: 1em;
+  background: #f59080;
+  height: 12em;
+}
+
+.carousel-item{
+  text-align: center;
+}
+
+.carousel-nom{
+  font-weight: bold;
+  font-size: large;
+}
+
+.accueil-footer{
+  margin-top: 2em;
+}
+
+/**Début occasion**/
+
+/**Début présentation**/
+.occasion-texte{
+  text-align: center;
+  margin-top: 2em;
+}
+
+.occasion-lien{
+  text-decoration: none;
+  color:#eb2100;
+}
+
+/**Début filtre**/
+.filtre{
+  display: flex;
+}
