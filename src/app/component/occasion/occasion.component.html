@@ -1,0 +1,26 @@
+<div class="container-fluid">
+
+  <p>Bienvenu dans la page de véhicule d'occasion !</p>
+
+  <ng-container *ngIf="isLoading">
+    <mat-progress-spinner style="margin:0 auto;"
+                          mode="indeterminate"></mat-progress-spinner>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading">
+    <div *ngFor="let voiture of voitureArray">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Test</mat-card-title>
+          <mat-card-subtitle>{{voiture.prix}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content> {{voiture.description}} </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="openDialog(voiture)">Détails</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-container>
+
+</div>
