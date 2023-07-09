@@ -1,0 +1,84 @@
+<main>
+
+  <!--Début  accueil-->
+  <section>
+    <div class="container-fluid">
+      <img src="../../../assets/images/image-accueil-desktop.jpg" class="photo-accueil" alt="Photo d'un mécanicien">
+    </div>
+    <div class="container-fluid bandeau">
+      <span class="accroche">Prise de rendez-vous via notre formulaire</span>
+      <button type="button" class="button">Prendre rendez-vous</button>
+    </div>
+  </section>
+
+  <!--Début service-->
+  <section>
+    <div class="container-fluid icone">
+      <img src="../../../assets/images/icone_mecanique.png" alt="Icône de clé symbolisant la mécanique">
+      <img src="../../../assets/images/icone_entretien.png" alt="Icône d'une voiture sur un pont">
+      <img src="../../../assets/images/icone_carrosserie.png" alt="Icône d'un marteau agissant sur une voiture symbolisant le travail sur la carrosserie">
+    </div>
+    <div class="container-fluid service">
+      <span>Mécanique générale</span>
+      <span>Entretien</span>
+      <span>Réparation carroserie</span>
+    </div>
+  </section>
+
+  <!--Début présentation-->
+  <section>
+    <h1 class="titre-presentation">Le garage V.Parrot</h1>
+    <div class="container-fluid presentation">
+      <img src="../../../assets/images/image_frein.jpg" class="photo-frein" alt="Photo de frein de voiture">
+      <p class="presentation-texte">Le garage Vincent Parrot a ouvert ses portes en 2021 à Toulouse. Le garage propose une large gamme de services, avec la mécanique générale, l'entretien de véhicule ainsi
+        que la réparation de carrosserie. De plus, le garage Parrot propose à la vente des véhicules d'occasion.
+      </p>
+      <img src="../../../assets/images/image_carrosserie.jpg" class="photo-carrosserie" alt="Photo du travail de la carrosserie">
+    </div>
+  </section>
+
+  <!--Début avis-->
+  <section>
+    <h1 class="titre-avis">Avis clients</h1>
+    <!--
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="container container-carousel">
+        <div class="carousel-inner">
+          <?php
+                                $first_line=true;
+                                while ($avis = $v->fetch()){
+          if ($first_line==true){
+          echo "<div class='carousel-item active'>";
+          $first_line=false;
+          }
+          else{
+          echo "<div class='carousel-item'>";
+            }
+            echo "<p class='carousel-nom'>" . $avis['nom'] . "</p>";
+            echo "<p>" . $avis['note'] . "</p>";
+            echo "<p>" . $avis['commentaire'] . "</p>";
+            echo "</div>";
+            }
+            ?>
+          </div>
+
+        </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      </div>-->
+  </section>
+</main>
