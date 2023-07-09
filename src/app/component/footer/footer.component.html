@@ -1,0 +1,23 @@
+<footer class="accueil-footer">
+  <div class="container-fluid container-footer">
+    <div class="footer-content">
+      <div class="tableau-footer">
+        <table class="table table-responsive text-light">
+          <tr>
+            <th>Jour</th>
+            <th>Matin</th>
+            <th>Après-midi</th>
+          </tr>
+          <tr *ngFor="let horaire of horaires">
+            <td>{{horaire.jour}}</td>
+            <td>{{horaire.heure_ouverture}}</td>
+            <td>{{horaire.heure_fermeture}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <p class="copyright">© Garage V.Parrot - Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
