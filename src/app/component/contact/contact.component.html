@@ -1,0 +1,16 @@
+
+  <form class="formulaire" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Titre</mat-label>
+      <input matInput formControlName="title" placeholder="Entrez le titre" value="{{getTitle()}}">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Entrez la description"></textarea>
+    </mat-form-field>
+
+    <!-- Le reste du formulaire -->
+
+    <button mat-raised-button color="primary" type="submit">Envoyer</button>
+  </form>
