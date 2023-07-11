@@ -40,7 +40,7 @@
   <!--Début avis-->
   <section>
     <h1 class="titre-avis">Avis clients</h1>
-    <!--
+
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -48,25 +48,18 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="container container-carousel">
-        <div class="carousel-inner">
-          <?php
-                                $first_line=true;
-                                while ($avis = $v->fetch()){
-          if ($first_line==true){
-          echo "<div class='carousel-item active'>";
-          $first_line=false;
-          }
-          else{
-          echo "<div class='carousel-item'>";
-            }
-            echo "<p class='carousel-nom'>" . $avis['nom'] . "</p>";
-            echo "<p>" . $avis['note'] . "</p>";
-            echo "<p>" . $avis['commentaire'] . "</p>";
-            echo "</div>";
-            }
-            ?>
+        <div class="carousel-inner" *ngFor="let avis of avisList; let isFirst = first;">
+          <div class='carousel-item active' *ngIf="isFirst">
+            <p class="carousel-nom">{{avis.nom}}</p>
+            <p>{{avis.note}}</p>
+            <p>{{avis.commentaire}}</p>
           </div>
-
+          <div class='carousel-item' *ngIf="!isFirst">
+            <p class="carousel-nom">{{avis.nom}}</p>
+            <p>{{avis.note}}</p>
+            <p>{{avis.commentaire}}</p>
+          </div>
+        </div>
         </div>
 
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -77,8 +70,6 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
-        </div>
-      </div>
-      </div>-->
+    </div>
   </section>
 </main>
