@@ -1,0 +1,18 @@
+<div class="formulaire">
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput required [(ngModel)]="unAvis.nom">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Note</mat-label>
+    <input matInput type="number" required [(ngModel)]="unAvis.note">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Commentaire</mat-label>
+    <textarea matInput required [(ngModel)]="unAvis.commentaire"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="onSubmit()">Envoyer</button>
+</div>
