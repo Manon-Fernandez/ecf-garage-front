@@ -19,4 +19,12 @@ export class AvisService {
   getAllAvisByStatus(status : Status){
     return this.httpClient.get<Array<Avis>>(this.url + '/status/' + Status[status]);
   }
+
+  createAvis(unAvis : Avis){
+    return this.httpClient.post(this.url, unAvis);
+  }
+
+  updateAvisByStatus(unAvis : Avis, status : Status){
+    return this.httpClient.put(this.url +'/status/' + Status[status], unAvis);
+  }
 }
