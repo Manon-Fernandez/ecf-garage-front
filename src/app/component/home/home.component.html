@@ -18,10 +18,8 @@
       <img src="../../../assets/images/icone_entretien.png" alt="Icône d'une voiture sur un pont">
       <img src="../../../assets/images/icone_carrosserie.png" alt="Icône d'un marteau agissant sur une voiture symbolisant le travail sur la carrosserie">
     </div>
-    <div class="container-fluid service">
-      <span>Mécanique générale</span>
-      <span>Entretien</span>
-      <span>Réparation carroserie</span>
+    <div class="container-fluid service" *ngFor="let service of services">
+      <span>{{service.nom}}</span>
     </div>
   </section>
 
@@ -71,5 +69,6 @@
             <span class="visually-hidden">Next</span>
           </button>
     </div>
+    <button mat-raised-button color="primary" (click)="openPopinAvis()">Laissez nous un avis !</button>
   </section>
 </main>
