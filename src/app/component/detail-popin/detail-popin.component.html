@@ -1,9 +1,30 @@
-<h1 mat-dialog-title>Bienvenu sur l'annonce !</h1>
+<h1 mat-dialog-title>{{voiture.denomination}} a saisir</h1>
 <div mat-dialog-content>
-  <p>Nous vous présentons, la voiture {{voiture.id}}</p>
+  <p>Nous vous proposons, la voiture {{voiture.denomination}}</p>
+  <!-- options -->
+    <ng-container *ngIf="isLoading">
+      <mat-progress-spinner style="margin:0 auto;"
+                            mode="indeterminate"></mat-progress-spinner>
+    </ng-container>
+  <ng-container *ngIf="!isLoading">
+  <div *ngIf="options.length == 0">
+    <p>Elle ne dispose pas d'options.</p>
+  </div>
 
+  <div *ngIf="options.length > 0">
+    <p>Elle dispose des options suivantes : </p>
+  <ul>
+    <li class="option" *ngFor="let option of options">
+      <p [matTooltip]="option.description"> {{option.nom}}</p>
+    </li>
+  </ul>
 </div>
+  </ng-container>
+
+  <p>{{voiture.description}}</p>
+</div>
+
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Contact</button>
+  <button mat-button (click)="onContact()">Contact</button>
   <button mat-raised-button (click)="onNoClick()">Fermer</button>
 </div>
