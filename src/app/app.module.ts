@@ -20,6 +20,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import { ContactComponent } from './component/contact/contact.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { AvisPopinComponent } from './component/avis-popin/avis-popin.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    AvisPopinComponent
   ],
   imports: [
     BrowserModule,

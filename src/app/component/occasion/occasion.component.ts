@@ -75,7 +75,5 @@ export class OccasionComponent implements OnInit{
     this.carsFiltered = this.voitureArray.filter(voiture => voiture.annee_circulation < this.valueAnneeCirculation);
   }
 
-
-  protected readonly min = min;
 }
 
