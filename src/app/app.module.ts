@@ -14,13 +14,20 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
 import {ActivatedRoute, RouterLink, RouterModule, RouterOutlet, Routes} from "@angular/router";
+import {MatSliderModule} from "@angular/material/slider";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import { ContactComponent } from './component/contact/contact.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 
 const appRoutes: Routes = [
   { path: 'occasion', component: OccasionComponent},
-
   { path: 'home', component: HomeComponent },
+  { path : 'contact', component: ContactComponent}
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +35,8 @@ const appRoutes: Routes = [
     OccasionComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,13 @@ const appRoutes: Routes = [
     MatDialogModule,
     RouterOutlet,
     RouterLink,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatSliderModule,
+    FormsModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
 
   providers: [],
