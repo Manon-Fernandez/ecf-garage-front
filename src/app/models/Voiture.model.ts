@@ -8,6 +8,7 @@ export class Voiture{
   private _kilometre : number;
   private _prix : number;
   private _description : string;
+  private _denomination : string;
 
   constructor(data : any) {
     this._id = data.id ? data.id : null;
@@ -16,6 +17,7 @@ export class Voiture{
     this._kilometre = data.kilometre ? data.kilometre : null;
     this._prix = data.prix ? data.prix : null;
     this._description = data.description ? data.description : null;
+    this._denomination = data.denomination ? data.denomination : null;
   }
 
 
@@ -59,6 +61,14 @@ export class Voiture{
     this._prix = value;
   }
 
+  get denomination(): string {
+    return this._denomination;
+  }
+
+  set denomination(value: string) {
+    this._denomination = value;
+  }
+
   get description(): string {
     return this._description;
   }
@@ -69,6 +79,12 @@ export class Voiture{
 
   serialize(){
     return {
+      id : this._id,
+      denomination : this._denomination,
+      prix : this._prix,
+      description : this._description,
+      energie : this._energie,
+      annee_circulation : this._annee_circulation
     }
   }
 
