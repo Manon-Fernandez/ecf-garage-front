@@ -1,11 +1,13 @@
-<h1 mat-dialog-title>{{voiture.denomination}} a saisir</h1>
+<h1 mat-dialog-title>Trouver accroche</h1>
 <div mat-dialog-content>
   <p>Nous vous proposons, la voiture {{voiture.denomination}}</p>
   <!-- options -->
     <ng-container *ngIf="isLoading">
-      <mat-progress-spinner style="margin:0 auto;"
+      <mat-progress-spinner color="warn"
                             mode="indeterminate"></mat-progress-spinner>
     </ng-container>
+
+  <p>{{voiture.description}}</p>
   <ng-container *ngIf="!isLoading">
   <div *ngIf="options.length == 0">
     <p>Elle ne dispose pas d'options.</p>
@@ -21,10 +23,10 @@
 </div>
   </ng-container>
 
-  <p>{{voiture.description}}</p>
+
 </div>
 
 <div mat-dialog-actions>
-  <button mat-button (click)="onContact()">Contact</button>
+  <button mat-raised-button color="warn" (click)="onContact()">Contact</button>
   <button mat-raised-button (click)="onNoClick()">Fermer</button>
 </div>
