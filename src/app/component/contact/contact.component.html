@@ -1,16 +1,30 @@
+<h1 class="titre-contact">Nous contacter</h1>
 
-  <form class="formulaire" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill">
-      <mat-label>Titre</mat-label>
-      <input matInput formControlName="title" placeholder="Entrez le titre" value="{{getTitle()}}">
-    </mat-form-field>
+<div class="container-fluid container-contact">
+  <img class="icone-contact" src="assets/images/icone_telephone.png">
+  <p class="contact">00 00 00 00 00</p>
+</div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description" placeholder="Entrez la description"></textarea>
-    </mat-form-field>
+<div class="container-fluid container-contact">
+  <img class="icone-contact" src="assets/images/icone_email.png">
+  <p class="contact">contact@garageparrot.fr</p>
+</div>
 
+<h2 class="titre-formulaire">Formulaire de contact</h2>
+
+  <form class="formulaire"[formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Titre</mat-label>
+        <input matInput formControlName="title" placeholder="Entrez le titre" value="{{getTitle()}}">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" placeholder="Entrez la description"></textarea>
+      </mat-form-field>
     <!-- Le reste du formulaire -->
+    <div class="container-fluid button-formulaire">
+      <button mat-raised-button color="warn" type="submit">Envoyer</button>
+    </div>
 
-    <button mat-raised-button color="primary" type="submit">Envoyer</button>
   </form>

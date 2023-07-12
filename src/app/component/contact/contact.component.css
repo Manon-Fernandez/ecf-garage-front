@@ -1,5 +1,44 @@
+/**Début contact**/
+.titre-contact{
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.container-contact{
+  display: flex;
+  margin-top: 5em;
+}
+
+.icone-contact{
+  width: 4em;
+  height: 4em;
+  margin-right: 2em;
+}
+
+.contact{
+  font-size: large;
+  display: flex;
+  align-items: center;
+}
+
+/**Début formulaire**/
+.titre-formulaire{
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
 .formulaire{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  margin-left: 45%;
+  width: fit-content;
+  margin-top: 2em;
 }
+
+.button-formulaire{
+  display: flex;
+  justify-content: center;
+}
+
