@@ -1,48 +1,4 @@
-.example-h2 {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.example-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-}
-
-.example-margin {
-  margin: 8px;
-}
-
-.example-width {
-  max-width: 180px;
-  width: 100%;
-}
-
-.mat-mdc-slider {
-  max-width: 300px;
-  width: 100%;
-}
-
-.mat-mdc-card + .mat-mdc-card {
-  margin-top: 8px;
-}
-
-.example-result-card h2 {
-  margin: 0 8px;
-}
-
-.example-label-container {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 10px 0;
-  max-width: 284px;
-}
-
-.example-result-card .example-value-label {
-  font-weight: 600;
-}
-
+/**Début présenation**/
 .titre-occasion{
   text-align: center;
   margin-top: 2em;
@@ -58,8 +14,47 @@
   color: #eb2100;
 }
 
-.button-filtre{
-  background: #9d9d9d;
-  border: none;
-  border-radius: 15%;
+/**Début filtre**/
+
+.container-filtre{
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
 }
+
+.example-name-label{
+  font-size: large;
+}
+
+.button-filtre{
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/**Début card**/
+.container-annonce{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.container-card{
+  border: solid 2px black;
+  margin-top: 5em;
+  margin-right: 15em;
+  width: fit-content;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.button-details{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+
+

@@ -1,81 +1,92 @@
+<!--Début présentation-->
 <div class="container-fluid">
 
   <h1 class="titre-occasion">Nos véhciules d'occasion à la vente</h1>
   <p class="presentation-occasion">Retrouvez ci-dessous notre sélection de véhicules d'occasion à la vente. Vous cherchez un véhicule précis,
-  n'hésitez pas à nous contacter par téléphone au 00 00 00 00 00 ou via <a href="#" class="lien-contact">notre page contact</a>.</p>
+  n'hésitez pas à nous contacter par téléphone au 00 00 00 00 00 ou via <span class="lien-contact">notre page contact</span>.</p>
 
   <ng-container *ngIf="isLoading">
-    <mat-progress-spinner style="margin:0 auto;"
+    <mat-progress-spinner color="warn"
                           mode="indeterminate"></mat-progress-spinner>
   </ng-container>
 
   <ng-container *ngIf="!isLoading">
 
-    <div class="example-label-container">
-      <label id="example-name-label" class="example-name-label">Prix</label>
-      <label class="example-value-label">{{valuePrix}}</label>
-    </div>
-    <mat-slider
-      class="example-margin"
-      [disabled]="false"
-      [max]="maxPrice"
-      [min]="minPrice"
-      [step]="10"
-      [discrete]="false"
-      [showTickMarks]="false"
-      (input)="onSliderChange()">
-      <input matSliderThumb [(ngModel)]="valuePrix">
-    </mat-slider>
+    <!--Début filtre-->
+    <div class="container-fluid container-filtre">
+      <div class="example-label-container">
+        <label class="example-name-label">Prix</label>
+          <label class="example-value-label">{{valuePrix}}</label>
+      </div>
+      <mat-slider color="warn"
+        class="example-margin"
+        [disabled]="false"
+        [max]="maxPrice"
+        [min]="minPrice"
+        [step]="100"
+        [discrete]="false"
+        [showTickMarks]="false"
+        (input)="onSliderChange()">
+        <input matSliderThumb [(ngModel)]="valuePrix">
+      </mat-slider>
 
-    <div class="example-label-container">
-      <label class="example-name-label">Kilométrage</label>
-      <label class="example-value-label">{{valueKilometre}}</label>
-    </div>
-    <mat-slider
-      class="example-margin"
-      [disabled]="false"
-      [max]="maxKilometers"
-      [min]="minKilometers"
-      [step]="1"
-      [discrete]="false"
-      [showTickMarks]="false"
-      (input)="onSliderChange()">
-      <input matSliderThumb [(ngModel)]="valueKilometre">
-    </mat-slider>
 
-    <div class="example-label-container">
-      <label class="example-name-label">Années</label>
-      <label class="example-value-label">{{valueAnneeCirculation}}</label>
+      <div class="example-label-container">
+        <label class="example-name-label">Kilométrage</label>
+        <label class="example-value-label">{{valueKilometre}}</label>
+      </div>
+      <mat-slider color="warn"
+        class="example-margin"
+        [disabled]="false"
+        [max]="maxKilometers"
+        [min]="minKilometers"
+        [step]="1000"
+        [discrete]="false"
+        [showTickMarks]="false"
+        (input)="onSliderChange()">
+        <input matSliderThumb [(ngModel)]="valueKilometre">
+      </mat-slider>
+
+      <div class="example-label-container">
+        <label class="example-name-label">Années</label>
+        <label class="example-value-label">{{valueAnneeCirculation}}</label>
+      </div>
+      <mat-slider color="warn"
+        class="example-margin"
+        [disabled]="false"
+        [max]="maxAnneeCirculation"
+        [min]="minAnneeCirculation"
+        [step]="1"
+        [discrete]="false"
+        [showTickMarks]="false"
+        (input)="onSliderChange()">
+        <input matSliderThumb [(ngModel)]="valueAnneeCirculation">
+      </mat-slider>
     </div>
-    <mat-slider
-      class="example-margin"
-      [disabled]="false"
-      [max]="maxAnneeCirculation"
-      [min]="minAnneeCirculation"
-      [step]="1"
-      [discrete]="false"
-      [showTickMarks]="false"
-      (input)="onSliderChange()">
-      <input matSliderThumb [(ngModel)]="valueAnneeCirculation">
-    </mat-slider>
+
   </ng-container>
 
-      <button type="button" class="button button-filtre" (click)="initFilter()">Réinitialiser</button>
+  <div class="container-fluid button-filtre">
+    <button mat-raised-button color="warn" (click)="initFilter()">Réinitialiser</button>
+  </div>
 </div>
 
-<div class="container-fluid">
+<!--Début cards-->
+<div class="container-fluid container-annonce">
   <div *ngFor="let voiture of carsFiltered">
-    <mat-card class="example-card">
+    <mat-card class="container container-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Renault Clio IV 1.5 DCI</mat-card-title>
+        <div mat-card-avatar></div>
+        <mat-card-title>{{voiture.denomination}}</mat-card-title>
         <mat-card-subtitle>{{voiture.prix}} €</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content> {{voiture.description}} </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button (click)="openDialog(voiture)">Détails</button>
+        <div class="container-fluid button-details">
+          <button mat-raised-button color="warn" (click)="openDialog(voiture)">Détails</button>
+        </div>
       </mat-card-actions>
     </mat-card>
   </div>
-
 </div>
+
