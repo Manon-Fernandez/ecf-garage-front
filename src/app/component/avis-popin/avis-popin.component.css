@@ -1,3 +1,6 @@
+.poppin-formulaire{
+  padding: 2em;
+}
 .formulaire{
   display: flex;
   flex-direction: column;
