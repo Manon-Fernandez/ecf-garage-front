@@ -21,12 +21,22 @@ import { ContactComponent } from './component/contact/contact.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { AvisPopinComponent } from './component/avis-popin/avis-popin.component';
+import { EmployeDashboardComponent } from './component/employe-dashboard/employe-dashboard.component';
+import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
+import {ToastrModule} from "ngx-toastr";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
 
 
 const appRoutes: Routes = [
   { path: 'occasion', component: OccasionComponent},
   { path: 'home', component: HomeComponent },
-  { path : 'contact', component: ContactComponent}
+  { path : 'contact', component: ContactComponent},
+  {path : 'employe', component: EmployeDashboardComponent},
+  {path : 'admin', component: AdminDashboardComponent}
 ];
 
 @NgModule({
@@ -38,7 +48,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     ContactComponent,
-    AvisPopinComponent
+    AvisPopinComponent,
+    EmployeDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +68,13 @@ const appRoutes: Routes = [
     MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    MatOptionModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatTableModule,
+    MatIconModule
   ],
 
   providers: [],

@@ -16,8 +16,8 @@ export class AppComponent implements OnInit{
     this.title = 'garage Vincent Parrot';
   }
 
-  ngOnInit() {
-    this.router.navigateByUrl("home")
+    ngOnInit() {
+   // this.router.navigateByUrl("home")
   }
 
 
