@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Avis, Status} from "../../models/Avis.model";
 import {AvisService} from "../../services/avis/avis.service";
+import {ToastService, ToastType} from "../../services/toast/toast.service";
 
 @Component({
   selector: 'app-avis-popin',
@@ -12,25 +13,38 @@ import {AvisService} from "../../services/avis/avis.service";
 export class AvisPopinComponent {
 
   unAvis: Avis;
+  maxValue : number;
+  avisForm: FormGroup;
+
+  @Output()
+  submit : EventEmitter<Avis>;
 
   constructor(public dialogRef: MatDialogRef<AvisPopinComponent>,
-              private formBuilder: FormBuilder,
-              private avisService : AvisService) {
+              private formBuilder: FormBuilder) {
     this.unAvis = Object.create(null);
+    this.maxValue = 10;
+    this.avisForm = this.formBuilder.group({
+      commentaire: ['', Validators.required],
+      nom: ['', Validators.required],
+      note: ['', Validators.required],
+    });
+    this.submit = new EventEmitter<Avis>;
   }
 
 
   onSubmit() {
-    this.sendData(this.unAvis);
-    // Réinitialisez le formulaire après la soumission
-    this.dialogRef.close();
+    if(this.avisForm.valid) {
+      const formData = this.avisForm.value;
+      const avis = {
+        'commentaire' : formData.commentaire,
+        'nom': formData.nom,
+        'note': formData.note
+      }
+      this.submit.emit(new Avis(avis));
+      // Réinitialisez le formulaire après la soumission
+      this.dialogRef.close();
+    }
   }
 
-  sendData(unAvis : Avis){
-    this.unAvis.status = Status.EN_ATTENTE;
-    this.avisService.createAvis(unAvis).subscribe(response => {
-      console.log('success');
-    })
-  }
 
 }
