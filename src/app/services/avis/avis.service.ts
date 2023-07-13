@@ -21,7 +21,7 @@ export class AvisService {
   }
 
   createAvis(unAvis : Avis){
-    return this.httpClient.post(this.url, unAvis);
+    return this.httpClient.post(this.url, unAvis.serialize());
   }
 
   updateAvisByStatus(unAvis : Avis, status : Status){

@@ -57,6 +57,15 @@ export class Avis{
   set status(value: Status) {
     this._status = value;
   }
+
+  serialize(){
+    return {
+      id: this.id,
+      commentaire : this.commentaire,
+      note: this.note,
+      nom: this.nom
+    }
+  }
 }
 
 export enum Status{
