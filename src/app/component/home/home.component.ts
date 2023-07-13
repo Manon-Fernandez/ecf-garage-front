@@ -6,6 +6,7 @@ import {GarageServiceService} from "../../services/garageService/garage-service.
 import {Service} from "../../models/Service.model";
 import {AvisPopinComponent} from "../avis-popin/avis-popin.component";
 import {MatDialog} from "@angular/material/dialog";
+import {ToastService, ToastType} from "../../services/toast/toast.service";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit{
 
   constructor(private avisService : AvisService,
               private  garageService : GarageServiceService,
-              public dialog: MatDialog) {
+              public dialog: MatDialog,
+              private toastService: ToastService) {
     this.avisList = [];
     this.services = [];
   }
@@ -40,6 +42,12 @@ export class HomeComponent implements OnInit{
 
   openPopinAvis(){
     const dialogRef = this.dialog.open(AvisPopinComponent);
+    dialogRef.componentInstance.submit.subscribe((response : Avis) => {
+        response.status = Status.EN_ATTENTE;
+        this.avisService.createAvis(response).subscribe(response => {
+          this.toastService.showToaster(ToastType.SUCCESS.toString(),'GG');
+        })
+      });
   }
 
 }

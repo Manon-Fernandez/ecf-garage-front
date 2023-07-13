@@ -13,6 +13,7 @@
 
   <!--Début service-->
   <section>
+    
     <div class="container-fluid container-icone">
       <img class="icone" src="../../../assets/images/icone_mecanique.png" alt="Icône de clé symbolisant la mécanique">
       <img class="icone" src="../../../assets/images/icone_entretien.png" alt="Icône d'une voiture sur un pont">
@@ -39,8 +40,9 @@
 
   <!--Début avis-->
   <section>
-    <h2 class="titre-avis">Avis clients</h2>
 
+    <h2 class="titre-avis">Avis clients</h2>
+    <div *ngIf="avisList.length > 0">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -62,8 +64,10 @@
         </div>
         </div>
     </div>
+    </div>
     <div class="container-fluid button-avis">
-      <button mat-raised-button color="warn" (click)="openPopinAvis()">Laissez nous un avis !</button>
+      <button mat-raised-button color="warn" *ngIf="avisList.length > 0" (click)="openPopinAvis()">Laissez nous un avis !</button>
+      <button mat-raised-button color="warn" *ngIf="avisList.length == 0" (click)="openPopinAvis()">Soyez le premier à donner votre avis !</button>
     </div>
   </section>
 </main>
