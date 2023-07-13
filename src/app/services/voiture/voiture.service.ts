@@ -19,4 +19,16 @@ export class VoitureService {
   getAllVoitures() {
     return this.httpClient.get<Array<Voiture>>(this.url);
   }
+
+  createVoiture(voiture : Voiture){
+    return this.httpClient.post(this.url,voiture.serialize());
+  }
+
+  getVoitureById(id : number){
+    return this.httpClient.get<Voiture>(this.url + '/' + id);
+  }
+
+  deleteVoitureById(id : number){
+    return this.httpClient.delete(this.url + '/' + id);
+  }
 }

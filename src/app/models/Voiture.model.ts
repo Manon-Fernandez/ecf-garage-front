@@ -1,14 +1,18 @@
-export class Voiture{
+import {Image} from "./Image.model";
+import {Option} from "./Option.model";
 
+export class Voiture{
 
   //attributs
   private _id : number;
   private _annee_circulation : number;
-  private _energie : string;
+  private _energie : Energie;
   private _kilometre : number;
   private _prix : number;
   private _description : string;
   private _denomination : string;
+  private _images : Array<Image> = [];
+  private _options : Array<Option> = [];
 
   constructor(data : any) {
     this._id = data.id ? data.id : null;
@@ -18,6 +22,32 @@ export class Voiture{
     this._prix = data.prix ? data.prix : null;
     this._description = data.description ? data.description : null;
     this._denomination = data.denomination ? data.denomination : null;
+    if(data.images){
+      data.images.forEach((imageData: any) => {
+        this._images.push(new Image(imageData));
+      });
+    }
+    if(data.options){
+      data.options.forEach((optionData: any) => {
+        this._options.push(new Option(optionData));
+      });
+    }
+  }
+
+  get options(): Array<Option> {
+    return this._options;
+  }
+
+  set options(value: Array<Option>) {
+    this._options = value;
+  }
+
+  get images(): Array<Image> {
+    return this._images;
+  }
+
+  set images(value: Array<Image>) {
+    this._images = value;
   }
 
 
@@ -37,11 +67,11 @@ export class Voiture{
     this._annee_circulation = value;
   }
 
-  get energie(): string {
+  get energie(): Energie {
     return this._energie;
   }
 
-  set energie(value: string) {
+  set energie(value: Energie) {
     this._energie = value;
   }
 
@@ -84,8 +114,16 @@ export class Voiture{
       prix : this._prix,
       description : this._description,
       energie : this._energie,
-      annee_circulation : this._annee_circulation
+      annee_circulation : this._annee_circulation,
+      images : this._images,
+      kilometre: this._kilometre
     }
   }
 
+}
+export enum Energie{
+  ELECTRIQUE = 'Electrique',
+  DIESEL = 'Diesel',
+  ESSENCE = 'Essence',
+  GPL = 'GPL'
 }
