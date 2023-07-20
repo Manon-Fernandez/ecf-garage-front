@@ -1,0 +1,13 @@
+.formulaire{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.poppin-formulaire{
+  padding: 2em;
+}
+
+.mat-form-field {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,102 @@
+/**Début accueil**/
+.photo-accueil{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bandeau{
+  background: #d5d5d5;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accroche{
+  font-size:large;
+  margin-right: 1em;
+}
+
+/**Début service**/
+.container-icone{
+  display: flex;
+  justify-content: space-evenly;
+}
+.icone{
+  width: 5em;
+  height: 5em;
+  margin-top: 5em;
+}
+
+.container-service{
+  display: flex;
+  justify-content: space-evenly;
+}
+.service{
+  display: inline-flex;
+  margin-top: 2em;
+  font-weight: bold;
+  font-size: large;
+}
+/**Début présentation**/
+.titre-presentation{
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-frein{
+  max-width: 25em;
+  max-height: 25em;
+}
+
+.photo-carrosserie{
+  max-width: 25em;
+  max-height: 25em;
+}
+
+.presentation{
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.presentation-texte{
+  margin-top: 5em;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+/**Début avis**/
+.titre-avis{
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.container-carousel{
+  margin-top: 2em;
+  padding-top: 2em;
+  padding-left: 5em;
+  padding-right: 5em;
+  background: #f59080;
+  height: 12em;
+  width: fit-content;
+}
+
+.carousel-item{
+  text-align: center;
+}
+
+.carousel-nom{
+  font-weight: bold;
+  font-size: large;
+}
+
+.button-avis{
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+

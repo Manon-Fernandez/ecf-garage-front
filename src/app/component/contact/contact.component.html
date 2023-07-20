@@ -1,0 +1,49 @@
+<h1 class="titre-contact">Nous contacter</h1>
+
+<div class="container-fluid container-contact">
+  <img class="icone-contact" src="assets/images/icone_telephone.png">
+  <p class="contact">00 00 00 00 00</p>
+</div>
+
+<div class="container-fluid container-contact">
+  <img class="icone-contact" src="assets/images/icone_email.png">
+  <p class="contact">vincent.parrot.garage.ecf@outlook.com</p>
+</div>
+
+<h2 class="titre-formulaire">Formulaire de contact</h2>
+
+<form class="formulaire" [formGroup]="contactForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="start center">
+  <mat-form-field>
+    <mat-label>Titre</mat-label>
+    <input matInput formControlName="title" placeholder="Entrez le titre" value="{{getTitle()}}">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="name" placeholder="Entrez votre nom">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="firstname" placeholder="Entrez votre prénom">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="mail" placeholder="Entrez votre email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Téléphone</mat-label>
+    <input matInput formControlName="phone" placeholder="Entrez votre numéro de téléphone">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" placeholder="Entrez la description"></textarea>
+  </mat-form-field>
+  <!-- Le reste du formulaire -->
+  <div class="container-fluid button-formulaire">
+    <button mat-raised-button color="warn" type="submit">Envoyer</button>
+  </div>
+</form>

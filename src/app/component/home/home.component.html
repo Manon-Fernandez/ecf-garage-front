@@ -1,0 +1,76 @@
+<main>
+  <!--Début accueil-->
+  <section>
+    <div class="container-fluid">
+      <img src="../../../assets/images/image-accueil-desktop.jpg" class="photo-accueil" alt="Photo d'un mécanicien">
+    </div>
+    <div class="container-fluid bandeau">
+      <span class="accroche">Prise de rendez-vous via notre formulaire</span>
+      <button mat-raised-button color="warn" (click)="goToContact()">Prendre rendez-vous</button>
+    </div>
+  </section>
+
+  <!--Début service-->
+  <section>
+    <h1 style="text-align: center"> Tous nos services </h1>
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="15px" fxLayoutAlign="center center">
+      <mat-card fxFlex="0 1 calc(33%-10px)" *ngFor="let card of services" fxFlex.lt-md="100%">
+        <mat-card-header>
+          <mat-card-title>{{card.nom}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{card.description}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <!--Début présentation-->
+  <section>
+    <h1 class="titre-presentation">Le garage V.Parrot</h1>
+    <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" fxLayoutAlign.lt-md="space-around center" class="container-fluid presentation">
+      <img fxFlex="33" src="../../../assets/images/image_frein.jpg" class="photo-frein" alt="Photo de frein de voiture">
+      <p fxFlex="33" class="presentation-texte">Le garage Vincent Parrot a ouvert ses portes en 2021 à Toulouse. Le garage propose une large gamme de services, avec la mécanique générale, l'entretien de véhicule ainsi
+        que la réparation de carrosserie. De plus, le garage Parrot propose à la vente des véhicules d'occasion.
+      </p>
+      <img fxFlex="33" src="../../../assets/images/image_carrosserie.jpg" class="photo-carrosserie" alt="Photo du travail de la carrosserie">
+    </div>
+  </section>
+
+
+<!--Début avis-->
+  <!--Début avis-->
+  <section>
+    <h2 class="titre-avis">Avis clients</h2>
+    <div *ngIf="avisList.length > 0">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="container container-carousel">
+          <div class="carousel-inner" *ngFor="let avis of avisList; let isFirst = first;">
+            <div class='carousel-item active' *ngIf="isFirst">
+              <p class="carousel-nom">{{avis.nom}}</p>
+              <p>{{avis.note}}</p>
+              <p>{{avis.commentaire}}</p>
+            </div>
+            <div class='carousel-item' *ngIf="!isFirst">
+              <p class="carousel-nom">{{avis.nom}}</p>
+              <p>{{avis.note}}</p>
+              <p>{{avis.commentaire}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px" fxLayout.lt-md="column" fxLayoutAlign="center center" class="container-fluid button-avis">
+      <button fxFlex mat-raised-button color="warn" *ngIf="avisList.length > 0" (click)="openPopinAvis()">Laissez nous un avis !</button>
+      <button fxFlex mat-raised-button color="warn" *ngIf="avisList.length == 0" (click)="openPopinAvis()">Soyez le premier à donner votre avis !</button>
+    </div>
+  </section>
+
+</main>
